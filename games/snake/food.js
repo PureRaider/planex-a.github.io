@@ -3,11 +3,15 @@ import { random_grid_position } from "./grid.js"
 
 let food = get_random_food_position();
 const EXPANSION_RATE = 1;
+let points = 0;
 
 export function update()
 {
     if(on_snake(food))
     {
+        points += 1;
+        document.getElementById("points").innerHTML = "Points: " + points;
+        console.log(points);
         expand_snake(EXPANSION_RATE);
         food = get_random_food_position();
     }

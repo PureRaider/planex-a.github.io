@@ -14,6 +14,7 @@
             align-items: center;
             margin: 0;
             background-color: black;
+            color: white;
         }
 
         #game-board {
@@ -34,10 +35,17 @@
             background-color: hsl(50, 100%, 50%);
             border: .25vmin solid black;
         }
+
+        #points {
+            transform: translate(-50%, 50%);
+        }
     </style>
     <script src="game.js" defer type="module"></script>
 </head>
+<h1 id="points">Points: </h1>
 <body>
+    
     <div id="game-board"></div>
+    
 </body>
 </html>
