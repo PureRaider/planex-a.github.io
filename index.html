@@ -1,1 +1,173 @@
-test
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planex</title>
+    <style>
+        .wave1 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+    
+        .wave1 svg {
+            position: relative;
+            display: block;
+            width: calc(123% + 1.3px);
+            height: 79px;
+        }
+    
+        .wave1 .shape-fill {
+            fill: #795be6;
+        }
+    
+        .wave2 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+    
+        .wave2 svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 92px;
+        }
+    
+        .wave2 .shape-fill {
+            fill: #FB89C6;
+        }
+    
+        body {
+            background-color: #404040;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background-color: #191919;
+            padding-top: 30px;
+            min-height: 100px;
+        }
+        header #title {
+            color: #fff;
+            float: left;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        header a:hover {
+            color: black;
+            color: #ffbc40;
+        }
+        header ul {
+            padding: 0;
+            margin: 0;
+        }
+        header li {
+            color: #fff;
+            float: left;
+            display: inline;
+            padding: 0 40px 0 20px;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        section {
+            color: #fff;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 400px;
+            padding: 100px 20vw;
+        }
+    
+        .dark {
+            background-color: #404040;
+        }
+        .blue {
+            background-color: #795be6;
+        }
+    
+        .red {
+            background-color: #ff4747;
+        }
+        .pink {
+            background-color: #fb89c6;
+        }
+
+        footer {
+            text-align: center;
+            color: #fff;
+            background-color: #191919;
+            padding-top: 30px;
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="title">
+                <h1>Planex</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="games/index.html">Games</a></li>
+                    <li><a href="">idk what should be here</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="dark">
+        <h1>Planex</h1>
+        <p>Planex is a simple website that you can play games on and a lot of other stuff!</p>
+        <div class="wave1">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+    <section class="blue">
+        <h1>Games</h1>
+        <p>Planex has many web games written with HTML5 and Javascript or using the Unity game engine!</p>
+        <div class="wave2">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+    <section class="pink">
+        <h1>About</h1>
+        <p>Aliquid esse qui ipsum architecto cumque iusto libero similique eveniet ipsam maiores quo nam quae corporis, sit illum reiciendis. Ab adipisci reprehenderit unde voluptates perferendis illum maiores accusantium obcaecati explicabo.</p>
+    </section>
+    <footer>
+        Planex - Dylan Willerton
+    </footer>
+</body>
+</html>
