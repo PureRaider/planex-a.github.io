@@ -1,4 +1,4 @@
-const RANDOM_TEXT_URL = "http://api.quotable.io/random";
+const RANDOM_TEXT_URL = "//api.quotable.io/random";
 const text_display_elem = document.getElementById("text-dis");
 const input_elem = document.getElementById("input");
 const timer_elem = document.getElementById("timer");
