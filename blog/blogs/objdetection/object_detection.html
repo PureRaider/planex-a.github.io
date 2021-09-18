@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Chatbot Tutorial</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+	<header>
+        <div class="container">
+            <div id="title">
+                <h1>Planex</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../">Home</a></li>
+                    <li><a href="../../../games">Games</a></li>
+                    <li><a href="../../">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+	<div class="text">
+		<center>
+			<br>
+			<h2>Object Detection!</h2>
+			<p>You will need to use pip to install cv2.</p>
+			<p>You will need to download <a href="code/coco.names" download>coco.names</a>, <a href="code/db.sqlite3" download>db.sqlite3</a>, <a href="code/frozen_inference_graph.pb">frozen_inference_graph.pb</a> and <a href="code/ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt" download>ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt</a>.</p>
+			<br>
+			<br>
+			<h2>Part one: Starting off!</h2>
+            <pre>
+                <code>import cv2
+
+cap = cv2.VideoCapture(0)
+cap.set(3,640)
+cap.set(4,480)
+
+classNames = []
+classFile = "coco.names"
+
+with open(classFile, "rt") as f:
+    classNames = f.read().rstrip("\n").split("\n")
+
+configPath = "ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt"
+weightsPath = "frozen_inference_graph.pb"
+
+net = cv2.dnn_DetectionModel(weightsPath, configPath)
+net.setInputSize(320, 320)
+net.setInputScale(1.0/127.5)
+net.setInputMean((127.5, 127.5, 127.5))
+net.setInputSwapRB(True)
+                </code>
+            </pre>
+            <br>
+            <br>
+            <h2>Part two: Make the while loop and starting camera!</h2>
+            <pre>
+                <code>while True:
+    success, img = cap.read()
+    classIds, confs, bbox = net.detect(img, confThreshold=0.5)
+    print(classIds, bbox)</code>
+            </pre>
+            <br>
+            <br>
+            <h2>Part three: Drawing box around object!</h2>
+            <pre>
+                <code>    if len(classIds) != 0:
+        for classId, confidence, box in zip(classIds.flatten(), confs.flatten(), bbox):
+            cv2.rectangle(img, box, color=(0, 255, 0), thickness=2)
+            cv2.putText(img, classNames[classId-1], (box[0]+10, box[1]-20), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 255, 0), 1)
+            </code>
+            </pre>
+            <br>
+            <br>
+            <h2>Part four: Finishing off!</h2>
+            <pre>
+                <code>    cv2.imshow("Output", img)
+    k = cv2.waitKey(30) & 0xff
+    if k == 27:
+        break
+    
+cap.release()
+cv2.destroyAllWindows()</code>
+            </pre>
+            <br>
+            <br>
+            <p><strong>That's all you need! To quit press</strong> <kbd>Esc</kbd></p>
+		</center>
+	</div>
+    <br>
+    <br>
+    <br>
+    <footer>
+        Planex
+    </footer>
+</body>
+</html>
